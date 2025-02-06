@@ -1,0 +1,4 @@
+forge-std/=node_modules/forge-std/src/
+@openzeppelin/=node_modules/@openzeppelin/
+drosera-contracts/=node_modules/drosera-contracts/src/
+

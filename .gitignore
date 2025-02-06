@@ -1,0 +1,16 @@
+# Compiler files
+cache/
+out/
+node_modules/
+
+# Ignores development broadcast logs
+contracts/broadcast/
+
+
+# Docs
+docs/
+
+# Dotenv file
+.env
+.envrc
+.DS_Store
