@@ -13,7 +13,7 @@ set-user:
 
 # register the operator within the network if not already registered
 register-operator:
-	docker run public.ecr.aws/c6e4c3o0/drosera-operator register \
+	drosera-operator register \
 	--eth-rpc-url ${RPC_URL} \
 	--eth-chain-id ${CHAIN_ID} \
 	--eth-private-key ${DROSERA_PRIVATE_KEY} \
@@ -21,19 +21,19 @@ register-operator:
 
 
 run-operator:
-	docker run public.ecr.aws/c6e4c3o0/drosera-operator node \
+	drosera-operator node \
 	--eth-rpc-url ${RPC_URL} \
 	--eth-private-key ${DROSERA_PRIVATE_KEY} \
-	--network-public-address localhost \
+	--network-external-p2p-address localhost \
 	--drosera-address ${DROSERA_ADDRESS} \
 	--log-level info \
-	--network-listen-address 0.0.0.0 \
+	--listen-address 0.0.0.0 \
 	--db-file-path ./data/operator.db \
 	--disable-dnr-confirmation true
 
 # replace the trap config address with the one you want to optin to
 optin:
-	docker run public.ecr.aws/c6e4c3o0/drosera-operator optin \
+	drosera-operator optin \
 	--eth-rpc-url ${RPC_URL} \
 	--eth-private-key ${DROSERA_PRIVATE_KEY} \
 	--drosera-address ${DROSERA_ADDRESS} \
@@ -41,7 +41,7 @@ optin:
 
 # replace the trap config address with the one you want to optout from
 optout:
-	docker run public.ecr.aws/c6e4c3o0/drosera-operator optout \
+	drosera-operator optout \
 	--eth-rpc-url ${RPC_URL} \
 	--eth-private-key ${DROSERA_PRIVATE_KEY} \
 	--drosera-address ${DROSERA_ADDRESS} \
